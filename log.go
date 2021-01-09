@@ -3,9 +3,9 @@ package common
 import (
 	"github.com/phachon/go-logger"
 )
-var InfoLogPath = "./"
-var ErrorLogPath = "./"
-var DebugLogPath = "./"
+var InfoLogPath = "./logs/info.log"
+var ErrorLogPath = "./logs/err.log"
+var DebugLogPath = "./logs/debug.log"
 func Logs() *go_logger.Logger  {
 	logger := go_logger.NewLogger()
 	logger.Detach("console")
