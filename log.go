@@ -6,9 +6,8 @@ import (
 var InfoLogPath = "./"
 var ErrorLogPath = "./"
 var DebugLogPath = "./"
-func Logs()  {
+func Logs() *go_logger.Logger  {
 	logger := go_logger.NewLogger()
-
 	logger.Detach("console")
 
 	// console adapter config
@@ -38,7 +37,5 @@ func Logs()  {
 	// add output to the file
 	logger.Attach("file", go_logger.LOGGER_LEVEL_DEBUG, fileConfig)
 
-
-	logger.Info("this is a info log!")
-	logger.Errorf("this is a error %s log!", "format")
+	return logger
 }
