@@ -21,12 +21,12 @@ func Logs() *go_logger.Logger  {
 
 	// file adapter config
 	fileConfig := &go_logger.FileConfig {
-		Filename : "./test.log", // The file name of the logger output, does not exist automatically
+		// Filename : "./test.log", // The file name of the logger output, does not exist automatically
 		// If you want to separate separate logs into files, configure LevelFileName parameters.
 		LevelFileName : map[int]string {
 			logger.LoggerLevel("error"): ErrorLogPath, // The error level log is written to the error.log file.
 			logger.LoggerLevel("info"):  InfoLogPath,  // The info level log is written to the info.log file.
-			logger.LoggerLevel("debug"): InfoLogPath,  // The debug level log is written to the debug.log file.
+			logger.LoggerLevel("debug"): DebugLogPath,  // The debug level log is written to the debug.log file.
 		},
 		MaxSize : 1024 * 1024,  // File maximum (KB), default 0 is not limited
 		MaxLine : 100000, // The maximum number of lines in the file, the default 0 is not limited
